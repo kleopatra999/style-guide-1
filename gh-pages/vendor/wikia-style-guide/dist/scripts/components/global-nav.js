@@ -1,29 +1,81 @@
 (function() {
 	'use strict';
 
-	// Create custom element
-	var proto = Object.create(HTMLElement.prototype);
-	proto.name = 'Global Nav';
+	// GLOBAL NAV
+	var globalNavProto = Object.create(HTMLElement.prototype);
+	globalNavProto.name = 'Global Nav';
 
-	proto.createdCallback = function() {
+	globalNavProto.createdCallback = function() {
 		// import the template and retrieve a document fragment from it
-		var content = document.querySelector('#globalNavImport').import,
-			template = content.querySelector('#globalNavTemplate'),
-			clone = document.importNode(template.content, true),
-			logoAnchor = clone.querySelector('.global-nav-logo-anchor'),
-			logoImg = clone.querySelector('.global-nav-logo-img');
+		var clone,
+			template = document.querySelector('#globalNavTemplate').content,
+			contentArea = template.querySelector('.global-nav-content');
 
-		logoAnchor.href = this.getAttribute('logo-href');
-		logoImg.src = this.getAttribute('logo-src');
+		contentArea.innerHTML = this.innerHTML;
+		clone = document.importNode(template, true);
 
 		// add our doc fragment to the DOM
 		this.innerHTML = '';
 		this.appendChild(clone);
+
+		createLogo();
+		createSearch();
 	};
 
 	// register the custom element
 	document.registerElement('global-nav', {
-		prototype: proto
+		prototype: globalNavProto,
+		extends: 'nav'
 	});
 
+	function createLogo() {
+		// LOGO
+		var navLogoProto = Object.create(HTMLAnchorElement.prototype);
+		navLogoProto.name = 'Nav Search';
+
+		navLogoProto.createdCallback = function () {
+			var template = document.querySelector('#logoTemplate'),
+				clone = document.importNode(template.content, true),
+				anchor = clone.querySelector('a'),
+				img = clone.querySelector('img');
+
+			anchor.href = this.getAttribute('data-href');
+			img.src = this.getAttribute('data-src');
+
+			// add our doc fragment to the DOM
+			this.parentNode.replaceChild(clone, this);
+		};
+
+		// register the custom element
+		document.registerElement('nav-logo', {
+			prototype: navLogoProto,
+			extends: 'a'
+		});
+	}
+
+	function createSearch() {
+		// SEARCH INPUT
+		var navSearchProto = Object.create(HTMLDivElement.prototype);
+		navSearchProto.name = 'Nav Search';
+
+		navSearchProto.createdCallback = function () {
+			var template = document.querySelector('#searchTemplate'),
+				clone = document.importNode(template.content, true),
+				input = clone.querySelector('input'),
+				placeholder = this.getAttribute('data-placeholder');
+
+			if (placeholder) {
+				input.setAttribute('placeholder', placeholder);
+			}
+
+			// add our doc fragment to the DOM
+			this.parentNode.replaceChild(clone, this);
+		};
+
+		// register the custom element
+		document.registerElement('nav-search', {
+			prototype: navSearchProto,
+			extends: 'div'
+		});
+	}
 })();
