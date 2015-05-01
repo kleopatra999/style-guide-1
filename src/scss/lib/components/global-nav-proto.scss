@@ -1,14 +1,21 @@
+$nav-height: 46px;
+
 .global-nav-proto {
 	background-color: #FFF;
 	border-bottom: 1px solid #ccc;
-	height: 46px;
+	height: $nav-height;
 	position: fixed;
 	width: 100%;
 	z-index: 9999999;
 
+	> .row > * {
+		height: $nav-height;
+	}
+
 	li a {
-		height: 50px;
-		line-height: 50px;
+		color: $body-font-color;
+		height: $nav-height;
+		line-height: $nav-height;
 		padding: 0 20px;
 	}
 
@@ -21,44 +28,68 @@
 	.nav-search {
 		display: flex;
 		align-items: center;
-		height: 46px; // same as global nav height, should probably use a variable here
-	}
 
-	.menu-icon {
-		height: 16px;
-		line-height: 16px;
-		margin-top: 16px;
-		width: 16px;
-	}
-
-	.menu-icon::after {
-		border: 5px solid #fff;
-		border-top-color: #cfcfcf;
-		content: ' ';
-		display: inline-block;
-		float: left;
-		margin: -11px 0 0 22px;
-	}
-
-	.menu-icon:hover::after {
-		border-top-color: #fff;
-		border-bottom-color: #000;
-		margin-top: -16px;
+		input {
+			margin-bottom: 0;
+		}
 	}
 
 	@media #{$small-only}, #{$medium-only} {
+		$nav-menu-padding: ($nav-height - 16px) / 2;
 		.nav-menu-content {
+			padding-top: $nav-menu-padding;
+			padding-bottom: $nav-menu-padding;
+
+			.menu-icon {
+				height: 16px;
+				line-height: 16px;
+				width: 16px;
+			}
+
+			.menu-icon::after {
+				border: 5px solid #fff;
+				border-top-color: #cfcfcf;
+				content: ' ';
+				display: inline-block;
+				float: left;
+				margin: -11px 0 0 22px;
+			}
+
+			.menu-icon:hover::after {
+				border-top-color: #fff;
+				border-bottom-color: #000;
+				margin-top: -16px;
+			}
+
 			ul {
+				@include dropdown-container;
 				display: none;
+				margin-top: $nav-menu-padding - 1px;
 			}
 			&:hover > ul {
-				@include dropdown-container;
 				display: block;
 
-				li:hover > ul {
-					@include dropdown-container;
-					display: block;
-					margin-left: -100%;
+				li:hover {
+					background: $color-blue-light;
+
+					> a {
+						color: white;
+					}
+
+					> ul {
+						@include dropdown-container;
+						display: block;
+						margin-left: -100%;
+						margin-top: ($nav-height + 1px) * -1;
+
+						li:hover {
+							background: $color-blue-light;
+
+							> a {
+								color: white;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -79,6 +110,15 @@
 					&:hover ul {
 						@include dropdown-container;
 						display: block;
+						margin-top: -1px;
+
+						li:hover {
+							background: $color-blue-light;
+
+							> a {
+								color: white;
+							}
+						}
 					}
 				}
 			}
