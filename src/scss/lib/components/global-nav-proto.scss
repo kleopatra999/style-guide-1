@@ -38,30 +38,18 @@ $nav-height: 46px;
 	}
 
 	@media #{$small-only}, #{$medium-only} {
-		$nav-menu-padding: ($nav-height - 16px) / 2;
-		.nav-menu-content {
+		$icon-size: 16px;
+		$nav-menu-padding: ($nav-height - $icon-size) / 2;
+		.nav-menu {
 			padding-top: $nav-menu-padding;
 			padding-bottom: $nav-menu-padding;
 
-			.menu-icon {
-				height: 16px;
-				line-height: 16px;
-				width: 16px;
-			}
-
-			.menu-icon::after {
-				border: 5px solid #fff;
-				border-top-color: #cfcfcf;
-				content: ' ';
-				display: inline-block;
-				float: left;
-				margin: -11px 0 0 22px;
-			}
-
-			.menu-icon:hover::after {
-				border-top-color: #fff;
-				border-bottom-color: #000;
-				margin-top: -16px;
+			&:before {
+				content: '';
+				background: url('../icons/icon_nav.svg');
+				display: block;
+				height: $icon-size;
+				width: $icon-size;
 			}
 
 			ul {
@@ -99,7 +87,7 @@ $nav-height: 46px;
 	}
 
 	@media #{$large-up} {
-		.nav-menu-content {
+		.nav-menu {
 			> ul {
 				display: block;
 

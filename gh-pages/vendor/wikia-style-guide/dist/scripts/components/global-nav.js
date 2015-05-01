@@ -83,30 +83,30 @@
 	}
 
 	// MENU
-	function createMenu() {
-		var navMenuProto = Object.create(HTMLDivElement.prototype);
-		navMenuProto.name = 'Nav Menu';
-
-		navMenuProto.createdCallback = function () {
-			var clone,
-				template = document.querySelector('#navMenuTemplate').content,
-				contentArea = template.querySelector('.nav-menu-content');
-
-			contentArea.innerHTML = this.innerHTML;
-			clone = document.importNode(template, true);
-
-			// add our doc fragment to the DOM
-			this.innerHTML = '';
-			this.appendChild(clone);
-		};
-
-		// register the custom element
-		document.registerElement('nav-menu', {
-			prototype: navMenuProto,
-			extends: 'div'
-		});
-	}
+	//function createMenu() {
+	//	var navMenuProto = Object.create(HTMLDivElement.prototype);
+	//	navMenuProto.name = 'Nav Menu';
+	//
+	//	navMenuProto.createdCallback = function () {
+	//		var clone,
+	//			template = document.querySelector('#navMenuTemplate').content,
+	//			contentArea = template.querySelector('.nav-menu-content');
+	//
+	//		contentArea.innerHTML = this.innerHTML;
+	//		clone = document.importNode(template, true);
+	//
+	//		// add our doc fragment to the DOM
+	//		this.innerHTML = '';
+	//		this.appendChild(clone);
+	//	};
+	//
+	//	// register the custom element
+	//	document.registerElement('nav-menu', {
+	//		prototype: navMenuProto,
+	//		extends: 'div'
+	//	});
+	//}
 
 	createSearch();
-	createMenu();
+	//createMenu();
 })();

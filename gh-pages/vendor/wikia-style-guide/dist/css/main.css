@@ -3303,25 +3303,16 @@ th.hide-for-touch {
     .global-nav-proto .nav-search input {
       margin-bottom: 0; }
   @media only screen and (max-width: 320px), only screen and (min-width:321px) and (max-width:768px) {
-    .global-nav-proto .nav-menu-content {
+    .global-nav-proto .nav-menu {
       padding-top: 15px;
       padding-bottom: 15px; }
-      .global-nav-proto .nav-menu-content .menu-icon {
+      .global-nav-proto .nav-menu:before {
+        content: '';
+        background: url('../icons/icon_nav.svg');
+        display: block;
         height: 16px;
-        line-height: 16px;
         width: 16px; }
-      .global-nav-proto .nav-menu-content .menu-icon::after {
-        border: 5px solid #fff;
-        border-top-color: #cfcfcf;
-        content: ' ';
-        display: inline-block;
-        float: left;
-        margin: -11px 0 0 22px; }
-      .global-nav-proto .nav-menu-content .menu-icon:hover::after {
-        border-top-color: #fff;
-        border-bottom-color: #000;
-        margin-top: -16px; }
-      .global-nav-proto .nav-menu-content ul {
+      .global-nav-proto .nav-menu ul {
         position: absolute;
         display: none;
         list-style: none;
@@ -3337,17 +3328,17 @@ th.hide-for-touch {
         max-width: 200px;
         display: none;
         margin-top: 14px; }
-        .global-nav-proto .nav-menu-content ul > *:first-child {
+        .global-nav-proto .nav-menu ul > *:first-child {
           margin-top: 0; }
-        .global-nav-proto .nav-menu-content ul > *:last-child {
+        .global-nav-proto .nav-menu ul > *:last-child {
           margin-bottom: 0; }
-      .global-nav-proto .nav-menu-content:hover > ul {
+      .global-nav-proto .nav-menu:hover > ul {
         display: block; }
-        .global-nav-proto .nav-menu-content:hover > ul li:hover {
+        .global-nav-proto .nav-menu:hover > ul li:hover {
           background: #1A5EB8; }
-          .global-nav-proto .nav-menu-content:hover > ul li:hover > a {
+          .global-nav-proto .nav-menu:hover > ul li:hover > a {
             color: white; }
-          .global-nav-proto .nav-menu-content:hover > ul li:hover > ul {
+          .global-nav-proto .nav-menu:hover > ul li:hover > ul {
             position: absolute;
             display: none;
             list-style: none;
@@ -3364,22 +3355,22 @@ th.hide-for-touch {
             display: block;
             margin-left: -100%;
             margin-top: -47px; }
-            .global-nav-proto .nav-menu-content:hover > ul li:hover > ul > *:first-child {
+            .global-nav-proto .nav-menu:hover > ul li:hover > ul > *:first-child {
               margin-top: 0; }
-            .global-nav-proto .nav-menu-content:hover > ul li:hover > ul > *:last-child {
+            .global-nav-proto .nav-menu:hover > ul li:hover > ul > *:last-child {
               margin-bottom: 0; }
-            .global-nav-proto .nav-menu-content:hover > ul li:hover > ul li:hover {
+            .global-nav-proto .nav-menu:hover > ul li:hover > ul li:hover {
               background: #1A5EB8; }
-              .global-nav-proto .nav-menu-content:hover > ul li:hover > ul li:hover > a {
+              .global-nav-proto .nav-menu:hover > ul li:hover > ul li:hover > a {
                 color: white; } }
   @media only screen and (min-width:769px) {
-    .global-nav-proto .nav-menu-content > ul {
+    .global-nav-proto .nav-menu > ul {
       display: block; }
-      .global-nav-proto .nav-menu-content > ul ul {
+      .global-nav-proto .nav-menu > ul ul {
         display: none; }
-      .global-nav-proto .nav-menu-content > ul > li {
+      .global-nav-proto .nav-menu > ul > li {
         display: inline-block; }
-        .global-nav-proto .nav-menu-content > ul > li:hover ul {
+        .global-nav-proto .nav-menu > ul > li:hover ul {
           position: absolute;
           display: none;
           list-style: none;
@@ -3395,11 +3386,11 @@ th.hide-for-touch {
           max-width: 200px;
           display: block;
           margin-top: -1px; }
-          .global-nav-proto .nav-menu-content > ul > li:hover ul > *:first-child {
+          .global-nav-proto .nav-menu > ul > li:hover ul > *:first-child {
             margin-top: 0; }
-          .global-nav-proto .nav-menu-content > ul > li:hover ul > *:last-child {
+          .global-nav-proto .nav-menu > ul > li:hover ul > *:last-child {
             margin-bottom: 0; }
-          .global-nav-proto .nav-menu-content > ul > li:hover ul li:hover {
+          .global-nav-proto .nav-menu > ul > li:hover ul li:hover {
             background: #1A5EB8; }
-            .global-nav-proto .nav-menu-content > ul > li:hover ul li:hover > a {
+            .global-nav-proto .nav-menu > ul > li:hover ul li:hover > a {
               color: white; } }
