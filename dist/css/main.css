@@ -3291,6 +3291,8 @@ th.hide-for-touch {
     fill: #092344;
     margin: 10px 20px 10px 0;
     width: 82px; }
+  .global-nav-proto .nav-search input {
+    margin-top: 4px; }
   .global-nav-proto .menu-icon {
     height: 16px;
     line-height: 16px;
@@ -3303,19 +3305,10 @@ th.hide-for-touch {
     display: inline-block;
     float: left;
     margin: -11px 0 0 22px; }
-  .global-nav-proto .menu-icon[data-active]::after {
+  .global-nav-proto .menu-icon:hover::after {
     border-top-color: #fff;
     border-bottom-color: #000;
     margin-top: -16px; }
-  .global-nav-proto .title {
-    border-left: 1px solid #bbb;
-    color: #656e78;
-    font-size: 24px;
-    font-weight: 200;
-    height: 24px;
-    line-height: 24px;
-    margin: 12px 0 0 30px;
-    padding-left: 10px; }
   @media only screen and (max-width: 320px), only screen and (min-width:321px) and (max-width:768px) {
     .global-nav-proto .nav-menu-content ul {
       display: none; }

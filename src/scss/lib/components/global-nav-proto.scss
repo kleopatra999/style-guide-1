@@ -18,6 +18,10 @@
 		width: 82px;
 	}
 
+	.nav-search input {
+		margin-top: 4px;
+	}
+
 	.menu-icon {
 		height: 16px;
 		line-height: 16px;
@@ -34,21 +38,10 @@
 		margin: -11px 0 0 22px;
 	}
 
-	.menu-icon[data-active]::after {
+	.menu-icon:hover::after {
 		border-top-color: #fff;
 		border-bottom-color: #000;
 		margin-top: -16px;
-	}
-
-	.title {
-		border-left: 1px solid #bbb;
-		color: #656e78;
-		font-size: 24px;
-		font-weight: 200;
-		height: 24px;
-		line-height: 24px;
-		margin: 12px 0 0 30px;
-		padding-left: 10px;
 	}
 
 	@media #{$small-only}, #{$medium-only} {
