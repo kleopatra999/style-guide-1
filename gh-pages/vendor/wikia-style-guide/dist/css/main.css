@@ -3276,38 +3276,38 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-.global-navigation {
+.global-nav-proto {
   background-color: #FFF;
   border-bottom: 1px solid #ccc;
   height: 46px;
   position: fixed;
   width: 100%;
   z-index: 9999999; }
-  .global-navigation li a {
+  .global-nav-proto li a {
     height: 50px;
     line-height: 50px;
     padding: 0 20px; }
-  .global-navigation .logo {
+  .global-nav-proto .logo {
     fill: #092344;
     margin: 10px 20px 10px 0;
     width: 82px; }
-  .global-navigation .menu-icon {
+  .global-nav-proto .menu-icon {
     height: 16px;
     line-height: 16px;
     margin-top: 16px;
     width: 16px; }
-  .global-navigation .menu-icon::after {
+  .global-nav-proto .menu-icon::after {
     border: 5px solid #fff;
     border-top-color: #cfcfcf;
     content: ' ';
     display: inline-block;
     float: left;
     margin: -11px 0 0 22px; }
-  .global-navigation .menu-icon[data-active]::after {
+  .global-nav-proto .menu-icon[data-active]::after {
     border-top-color: #fff;
     border-bottom-color: #000;
     margin-top: -16px; }
-  .global-navigation .title {
+  .global-nav-proto .title {
     border-left: 1px solid #bbb;
     color: #656e78;
     font-size: 24px;
@@ -3317,9 +3317,9 @@ th.hide-for-touch {
     margin: 12px 0 0 30px;
     padding-left: 10px; }
   @media only screen and (max-width: 320px), only screen and (min-width:321px) and (max-width:768px) {
-    .global-navigation .nav-menu-content ul {
+    .global-nav-proto .nav-menu-content ul {
       display: none; }
-    .global-navigation .nav-menu-content:hover > ul {
+    .global-nav-proto .nav-menu-content:hover > ul {
       position: absolute;
       display: none;
       list-style: none;
@@ -3334,11 +3334,11 @@ th.hide-for-touch {
       z-index: 89;
       max-width: 200px;
       display: block; }
-      .global-navigation .nav-menu-content:hover > ul > *:first-child {
+      .global-nav-proto .nav-menu-content:hover > ul > *:first-child {
         margin-top: 0; }
-      .global-navigation .nav-menu-content:hover > ul > *:last-child {
+      .global-nav-proto .nav-menu-content:hover > ul > *:last-child {
         margin-bottom: 0; }
-      .global-navigation .nav-menu-content:hover > ul li:hover > ul {
+      .global-nav-proto .nav-menu-content:hover > ul li:hover > ul {
         position: absolute;
         display: none;
         list-style: none;
@@ -3354,18 +3354,18 @@ th.hide-for-touch {
         max-width: 200px;
         display: block;
         margin-left: -100%; }
-        .global-navigation .nav-menu-content:hover > ul li:hover > ul > *:first-child {
+        .global-nav-proto .nav-menu-content:hover > ul li:hover > ul > *:first-child {
           margin-top: 0; }
-        .global-navigation .nav-menu-content:hover > ul li:hover > ul > *:last-child {
+        .global-nav-proto .nav-menu-content:hover > ul li:hover > ul > *:last-child {
           margin-bottom: 0; } }
   @media only screen and (min-width:769px) {
-    .global-navigation .nav-menu-content > ul {
+    .global-nav-proto .nav-menu-content > ul {
       display: block; }
-      .global-navigation .nav-menu-content > ul ul {
+      .global-nav-proto .nav-menu-content > ul ul {
         display: none; }
-      .global-navigation .nav-menu-content > ul li {
+      .global-nav-proto .nav-menu-content > ul li {
         display: inline-block; }
-        .global-navigation .nav-menu-content > ul li:hover ul {
+        .global-nav-proto .nav-menu-content > ul li:hover ul {
           position: absolute;
           display: none;
           list-style: none;
@@ -3380,7 +3380,7 @@ th.hide-for-touch {
           z-index: 89;
           max-width: 200px;
           display: block; }
-          .global-navigation .nav-menu-content > ul li:hover ul > *:first-child {
+          .global-nav-proto .nav-menu-content > ul li:hover ul > *:first-child {
             margin-top: 0; }
-          .global-navigation .nav-menu-content > ul li:hover ul > *:last-child {
+          .global-nav-proto .nav-menu-content > ul li:hover ul > *:last-child {
             margin-bottom: 0; } }
