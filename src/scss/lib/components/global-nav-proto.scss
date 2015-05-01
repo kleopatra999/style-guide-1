@@ -18,8 +18,10 @@
 		width: 82px;
 	}
 
-	.nav-search input {
-		margin-top: 4px;
+	.nav-search {
+		display: flex;
+		align-items: center;
+		height: 46px; // same as global nav height, should probably use a variable here
 	}
 
 	.menu-icon {
@@ -71,7 +73,7 @@
 					display: none;
 				}
 
-				li {
+				> li {
 					display: inline-block;
 
 					&:hover ul {

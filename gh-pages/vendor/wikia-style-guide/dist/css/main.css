@@ -3291,8 +3291,10 @@ th.hide-for-touch {
     fill: #092344;
     margin: 10px 20px 10px 0;
     width: 82px; }
-  .global-nav-proto .nav-search input {
-    margin-top: 4px; }
+  .global-nav-proto .nav-search {
+    display: flex;
+    align-items: center;
+    height: 46px; }
   .global-nav-proto .menu-icon {
     height: 16px;
     line-height: 16px;
@@ -3356,9 +3358,9 @@ th.hide-for-touch {
       display: block; }
       .global-nav-proto .nav-menu-content > ul ul {
         display: none; }
-      .global-nav-proto .nav-menu-content > ul li {
+      .global-nav-proto .nav-menu-content > ul > li {
         display: inline-block; }
-        .global-nav-proto .nav-menu-content > ul li:hover ul {
+        .global-nav-proto .nav-menu-content > ul > li:hover ul {
           position: absolute;
           display: none;
           list-style: none;
@@ -3373,7 +3375,7 @@ th.hide-for-touch {
           z-index: 89;
           max-width: 200px;
           display: block; }
-          .global-nav-proto .nav-menu-content > ul li:hover ul > *:first-child {
+          .global-nav-proto .nav-menu-content > ul > li:hover ul > *:first-child {
             margin-top: 0; }
-          .global-nav-proto .nav-menu-content > ul li:hover ul > *:last-child {
+          .global-nav-proto .nav-menu-content > ul > li:hover ul > *:last-child {
             margin-bottom: 0; } }
