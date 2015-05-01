@@ -20,6 +20,7 @@
 
 		createLogo();
 		createSearch();
+		createMenu();
 	};
 
 	// register the custom element
@@ -28,14 +29,14 @@
 		extends: 'nav'
 	});
 
+	// LOGO
 	function createLogo() {
-		// LOGO
-		var navLogoProto = Object.create(HTMLAnchorElement.prototype);
+		var navLogoProto = Object.create(HTMLDivElement.prototype);
 		navLogoProto.name = 'Nav Search';
 
 		navLogoProto.createdCallback = function () {
-			var template = document.querySelector('#logoTemplate'),
-				clone = document.importNode(template.content, true),
+			var template = document.querySelector('#logoTemplate').content,
+				clone = document.importNode(template, true),
 				anchor = clone.querySelector('a'),
 				img = clone.querySelector('img');
 
@@ -43,24 +44,25 @@
 			img.src = this.getAttribute('data-src');
 
 			// add our doc fragment to the DOM
-			this.parentNode.replaceChild(clone, this);
+			this.innerHTML = '';
+			this.appendChild(clone);
 		};
 
 		// register the custom element
 		document.registerElement('nav-logo', {
 			prototype: navLogoProto,
-			extends: 'a'
+			extends: 'div'
 		});
 	}
 
+	// SEARCH INPUT
 	function createSearch() {
-		// SEARCH INPUT
 		var navSearchProto = Object.create(HTMLDivElement.prototype);
 		navSearchProto.name = 'Nav Search';
 
 		navSearchProto.createdCallback = function () {
-			var template = document.querySelector('#searchTemplate'),
-				clone = document.importNode(template.content, true),
+			var template = document.querySelector('#searchTemplate').content,
+				clone = document.importNode(template, true),
 				input = clone.querySelector('input'),
 				placeholder = this.getAttribute('data-placeholder');
 
@@ -69,12 +71,38 @@
 			}
 
 			// add our doc fragment to the DOM
-			this.parentNode.replaceChild(clone, this);
+			this.innerHTML = '';
+			this.appendChild(clone);
 		};
 
 		// register the custom element
 		document.registerElement('nav-search', {
 			prototype: navSearchProto,
+			extends: 'div'
+		});
+	}
+
+	// MENU
+	function createMenu() {
+		var navMenuProto = Object.create(HTMLDivElement.prototype);
+		navMenuProto.name = 'Nav Menu';
+
+		navMenuProto.createdCallback = function () {
+			var clone,
+				template = document.querySelector('#navMenuTemplate').content,
+				contentArea = template.querySelector('.nav-menu-content');
+
+			contentArea.innerHTML = this.innerHTML;
+			clone = document.importNode(template, true);
+
+			// add our doc fragment to the DOM
+			this.innerHTML = '';
+			this.appendChild(clone);
+		};
+
+		// register the custom element
+		document.registerElement('nav-menu', {
+			prototype: navMenuProto,
 			extends: 'div'
 		});
 	}

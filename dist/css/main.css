@@ -3277,7 +3277,7 @@ th.hide-for-touch {
     display: table-cell !important; } }
 
 .global-navigation {
-  background-color: #fff;
+  background-color: #FFF;
   border-bottom: 1px solid #ccc;
   height: 46px;
   position: fixed;
@@ -3316,3 +3316,71 @@ th.hide-for-touch {
     line-height: 24px;
     margin: 12px 0 0 30px;
     padding-left: 10px; }
+  @media only screen and (max-width: 320px), only screen and (min-width:321px) and (max-width:768px) {
+    .global-navigation .nav-menu-content ul {
+      display: none; }
+    .global-navigation .nav-menu-content:hover > ul {
+      position: absolute;
+      display: none;
+      list-style: none;
+      margin-left: 0;
+      outline: none;
+      width: 100%;
+      max-height: none;
+      height: auto;
+      background: #FFFFFF;
+      border: solid 1px #cccccc;
+      font-size: 0.875rem;
+      z-index: 89;
+      max-width: 200px;
+      display: block; }
+      .global-navigation .nav-menu-content:hover > ul > *:first-child {
+        margin-top: 0; }
+      .global-navigation .nav-menu-content:hover > ul > *:last-child {
+        margin-bottom: 0; }
+      .global-navigation .nav-menu-content:hover > ul li:hover > ul {
+        position: absolute;
+        display: none;
+        list-style: none;
+        margin-left: 0;
+        outline: none;
+        width: 100%;
+        max-height: none;
+        height: auto;
+        background: #FFFFFF;
+        border: solid 1px #cccccc;
+        font-size: 0.875rem;
+        z-index: 89;
+        max-width: 200px;
+        display: block;
+        margin-left: -100%; }
+        .global-navigation .nav-menu-content:hover > ul li:hover > ul > *:first-child {
+          margin-top: 0; }
+        .global-navigation .nav-menu-content:hover > ul li:hover > ul > *:last-child {
+          margin-bottom: 0; } }
+  @media only screen and (min-width:769px) {
+    .global-navigation .nav-menu-content > ul {
+      display: block; }
+      .global-navigation .nav-menu-content > ul ul {
+        display: none; }
+      .global-navigation .nav-menu-content > ul li {
+        display: inline-block; }
+        .global-navigation .nav-menu-content > ul li:hover ul {
+          position: absolute;
+          display: none;
+          list-style: none;
+          margin-left: 0;
+          outline: none;
+          width: 100%;
+          max-height: none;
+          height: auto;
+          background: #FFFFFF;
+          border: solid 1px #cccccc;
+          font-size: 0.875rem;
+          z-index: 89;
+          max-width: 200px;
+          display: block; }
+          .global-navigation .nav-menu-content > ul li:hover ul > *:first-child {
+            margin-top: 0; }
+          .global-navigation .nav-menu-content > ul li:hover ul > *:last-child {
+            margin-bottom: 0; } }

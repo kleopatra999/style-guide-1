@@ -1,5 +1,5 @@
 .global-navigation {
-	background-color: #fff;
+	background-color: #FFF;
 	border-bottom: 1px solid #ccc;
 	height: 46px;
 	position: fixed;
@@ -49,5 +49,44 @@
 		line-height: 24px;
 		margin: 12px 0 0 30px;
 		padding-left: 10px;
+	}
+
+	@media #{$small-only}, #{$medium-only} {
+		.nav-menu-content {
+			ul {
+				display: none;
+			}
+			&:hover > ul {
+				@include dropdown-container;
+				display: block;
+
+				li:hover > ul {
+					@include dropdown-container;
+					display: block;
+					margin-left: -100%;
+				}
+			}
+		}
+	}
+
+	@media #{$large-up} {
+		.nav-menu-content {
+			> ul {
+				display: block;
+
+				ul {
+					display: none;
+				}
+
+				li {
+					display: inline-block;
+
+					&:hover ul {
+						@include dropdown-container;
+						display: block;
+					}
+				}
+			}
+		}
 	}
 }
