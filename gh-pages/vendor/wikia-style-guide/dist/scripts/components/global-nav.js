@@ -1,33 +1,33 @@
 (function() {
 	'use strict';
 
-	// GLOBAL NAV
-	var globalNavProto = Object.create(HTMLElement.prototype);
-	globalNavProto.name = 'Global Nav';
-
-	globalNavProto.createdCallback = function() {
-		// import the template and retrieve a document fragment from it
-		var clone,
-			template = document.querySelector('#globalNavTemplate').content,
-			contentArea = template.querySelector('.global-nav-content');
-
-		contentArea.innerHTML = this.innerHTML;
-		clone = document.importNode(template, true);
-
-		// add our doc fragment to the DOM
-		this.innerHTML = '';
-		this.appendChild(clone);
-
-		createLogo();
-		createSearch();
-		createMenu();
-	};
-
-	// register the custom element
-	document.registerElement('global-nav', {
-		prototype: globalNavProto,
-		extends: 'nav'
-	});
+	//// GLOBAL NAV
+	//var globalNavProto = Object.create(HTMLElement.prototype);
+	//globalNavProto.name = 'Global Nav';
+	//
+	//globalNavProto.createdCallback = function() {
+	//	// import the template and retrieve a document fragment from it
+	//	var clone,
+	//		template = document.querySelector('#globalNavTemplate').content,
+	//		contentArea = template.querySelector('.global-nav-content');
+	//
+	//	contentArea.innerHTML = this.innerHTML;
+	//	clone = document.importNode(template, true);
+	//
+	//	// add our doc fragment to the DOM
+	//	this.innerHTML = '';
+	//	this.appendChild(clone);
+	//
+	//	createLogo();
+	//	createSearch();
+	//	createMenu();
+	//};
+	//
+	//// register the custom element
+	//document.registerElement('global-nav', {
+	//	prototype: globalNavProto,
+	//	extends: 'nav'
+	//});
 
 	// LOGO
 	function createLogo() {
@@ -106,4 +106,7 @@
 			extends: 'div'
 		});
 	}
+
+	createSearch();
+	createMenu();
 })();

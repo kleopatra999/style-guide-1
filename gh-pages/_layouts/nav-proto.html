@@ -3,16 +3,16 @@
 
 {% include head.html %}
 
-<template id="globalNavTemplate">
-	<div class="row global-nav-content">
-	</div>
-</template>
+<!--<template id="globalNavTemplate">-->
+	<!--<div class="row global-nav-content">-->
+	<!--</div>-->
+<!--</template>-->
 
-<template id="logoTemplate">
-	<a href="">
-		<img src="" class="logo">
-	</a>
-</template>
+<!--<template id="logoTemplate">-->
+	<!--<a href="">-->
+		<!--<img src="" class="logo">-->
+	<!--</a>-->
+<!--</template>-->
 
 <template id="searchTemplate">
 	<input type="search" placeholder="default placeholder">
@@ -23,28 +23,30 @@
 </template>
 
 <body class="page-{{page.class}}">
-<nav is="global-nav" class="global-nav-proto">
-	<!--<a class="logo"></a>-->
-	<div is="nav-logo"
-		class="nav-logo small-5 large-2 columns"
-		data-href="{{site.baseurl}}/"
-		data-src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg"></div>
-	<div is="nav-search"
-		class="nav-search small-5 large-4 columns"
-		data-placeholder="search"></div>
-	<div is="nav-menu"
-		class="nav-menu small-2 large-6 columns">
-		<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg" class="menu-icon hide-for-large-up">
-		<ul>
-			<li>
-				<a href="#">Test</a>
-				<ul>
-					<li><a href="#">Level 2</a></li>
-					<li><a href="#">Level 2</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Test 2</a></li>
-		</ul>
+<nav class="global-nav-proto">
+	<div class="row global-nav-content">
+		<a class="logo"></a>
+		<!--<div is="nav-logo"-->
+		<!--class="nav-logo small-5 large-2 columns"-->
+		<!--data-href="{{site.baseurl}}/"-->
+		<!--data-src="{{ site.assets_path | prepend: site.baseurl }}/images/wikia_logo.svg"></div>-->
+		<div is="nav-search"
+			 class="nav-search small-5 large-4 columns"
+			 data-placeholder="search"></div>
+		<div is="nav-menu"
+			 class="nav-menu small-2 large-6 columns">
+			<img src="{{ site.assets_path | prepend: site.baseurl }}/images/icons/icon_nav.svg" class="menu-icon hide-for-large-up">
+			<ul>
+				<li>
+					<a href="#">Test</a>
+					<ul>
+						<li><a href="#">Level 2</a></li>
+						<li><a href="#">Level 2</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Test 2</a></li>
+			</ul>
+		</div>
 	</div>
 </nav>
 <div class="row">

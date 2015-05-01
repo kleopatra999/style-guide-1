@@ -3285,15 +3285,18 @@ th.hide-for-touch {
   z-index: 9999999; }
   .global-nav-proto > .row > * {
     height: 46px; }
+  .global-nav-proto .logo {
+    background: url('../svg/wikia_logo.svg') no-repeat;
+    display: block;
+    height: 23px;
+    float: left;
+    margin: 10px 20px;
+    width: 82px; }
   .global-nav-proto li a {
     color: #39424D;
     height: 46px;
     line-height: 46px;
     padding: 0 20px; }
-  .global-nav-proto .logo {
-    fill: #092344;
-    margin: 10px 20px 10px 0;
-    width: 82px; }
   .global-nav-proto .nav-search {
     display: flex;
     align-items: center; }
