@@ -1,18 +1,62 @@
+@import 'global-nav-settings';
+
+/**
+ * Notes/Dependencies:
+ * Design includes setting padding-top of $global-navigation-height on the body/site wrapper
+ */
+
 $nav-height: 46px;
+$start-a-wikia-logo-size: 30px;
 
-.global-nav-proto {
-	background-color: #FFF;
-	border-bottom: 1px solid #ccc;
-	height: $nav-height;
+// TODO: this should go somewhere else (styles for body tag)
+.page-nav-proto {
+	padding-top: $global-navigation-height;
+}
+
+.global-navigation-proto {
+	background-color: $global-wikia-background-color;
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+	box-sizing: border-box;
+	color: $nav-foreground-dark-color;
+	height: $global-navigation-height;
+	margin-top: -$global-navigation-height - 1px;
 	position: fixed;
+	transition-duration: .5s;
 	width: 100%;
-	z-index: 9999999;
+	z-index: $global-navigation-z-index;
 
-	> .row > * {
-		height: $nav-height;
+	*, *::before, *::after {
+		box-sizing: inherit;
 	}
 
-	.logo {
+	&.static {
+		position: absolute;
+	}
+
+	.global-navigation-container {
+		@include clearfix;
+
+		display: table;
+		white-space: nowrap;
+		margin: 0 auto;
+		width: $width-outside;
+	}
+
+	.table-cell {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	//.wikia-logo-container {
+	//	padding-right: 15px;
+	//
+	//	.wikia-logo img {
+	//		background-position: right center;
+	//		vertical-align: sub;
+	//	}
+	//}
+
+	.wikia-logo {
 		background: url('../svg/wikia_logo.svg') no-repeat;
 		display: block;
 		height: 23px;
@@ -21,98 +65,273 @@ $nav-height: 46px;
 		width: 82px;
 	}
 
-	li a {
-		color: $body-font-color;
-		height: $nav-height;
-		line-height: $nav-height;
-		padding: 0 20px;
-	}
+	.start-wikia-container {
+		padding-left: 10px;
 
-	.nav-search {
-		display: flex;
-		align-items: center;
+		.start-wikia {
+			border: solid 1px $global-navigation-text-color;
+			color: $global-navigation-text-color;
+			display: inline-block;
+			font-size: 12px;
+			height: $start-a-wikia-logo-size;
+			line-height: 28px;
+			margin-bottom: $global-navigation-margin-size + 1px;
+			margin-top: $global-navigation-margin-size + 1px;
+			padding: 0 10px;
 
-		input {
-			margin-bottom: 0;
-		}
-	}
-
-	@media #{$small-only}, #{$medium-only} {
-		$icon-size: 16px;
-		$nav-menu-padding: ($nav-height - $icon-size) / 2;
-		.nav-menu {
-			padding-top: $nav-menu-padding;
-			padding-bottom: $nav-menu-padding;
-
-			&:before {
-				content: '';
-				background: url('../icons/icon_nav.svg');
-				display: block;
-				height: $icon-size;
-				width: $icon-size;
+			&:hover {
+				background-color: $global-navigation-active-color;
+				color: $global-wikia-background-color;
+				text-decoration: none;
 			}
 
-			ul {
-				@include dropdown-container;
-				display: none;
-				margin-top: $nav-menu-padding - 1px;
-			}
-			&:hover > ul {
-				display: block;
-
-				li:hover {
-					background: $color-blue-light;
-
-					> a {
-						color: white;
-					}
-
-					> ul {
-						@include dropdown-container;
-						display: block;
-						margin-left: -100%;
-						margin-top: ($nav-height + 1px) * -1;
-
-						li:hover {
-							background: $color-blue-light;
-
-							> a {
-								color: white;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@media #{$large-up} {
-		.nav-menu {
-			> ul {
-				display: block;
-
-				ul {
-					display: none;
-				}
-
-				> li {
-					display: inline-block;
-
-					&:hover ul {
-						@include dropdown-container;
-						display: block;
-						margin-top: -1px;
-
-						li:hover {
-							background: $color-blue-light;
-
-							> a {
-								color: white;
-							}
-						}
-					}
-				}
+			span {
+				display: inline-block;
+				padding-top: 1px;
 			}
 		}
 	}
 }
+
+
+.WikiaSiteWrapper {
+	padding-top: $global-navigation-height + 1px;
+}
+
+.ve .global-navigation {
+	position: absolute;
+	z-index: $global-navigation-z-index - 1;
+}
+
+.sso-login.hidden {
+	display: none;
+}
+
+@if $widthType == 0 {
+	@media #{$breakpoint-not-supported} {
+		.global-navigation .global-navigation-container {
+			width: $content-width-small;
+			position: relative;
+		}
+	}
+	@media #{$breakpoint-small-only} {
+		.global-navigation .global-navigation-container {
+			width: $content-width-small;
+
+			.start-wikia-container {
+				padding-left: 21px;
+
+				.start-wikia {
+					width: $start-a-wikia-logo-size;
+					//-2px because of borders
+					line-height: $start-a-wikia-logo-size - 2px;
+					&:after {
+						content: '+';
+						display: block;
+					}
+
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$breakpoint-medium-only} {
+		.global-navigation .global-navigation-container {
+			width: $content-width-medium;
+		}
+	}
+
+	@media #{$breakpoint-large-up} {
+		.global-navigation .global-navigation-container {
+			width: $content-width-large;
+		}
+	}
+}
+@if $widthType > 0 {
+	@media #{$breakpoint-not-supported} {
+		.global-navigation {
+			min-width: 767px;
+			position: relative;
+		}
+	}
+
+	@media screen and (max-width: $breakpoint-content) {
+		.global-navigation {
+			min-width: $width-outside-min;
+
+			.start-wikia-container {
+				padding-left: 21px;
+
+				.start-wikia {
+					width: $start-a-wikia-logo-size;
+					//-2px because of borders
+					line-height: $start-a-wikia-logo-size - 2px;
+					&:after {
+						content: '+';
+						display: block;
+					}
+
+					span {
+						display: none;
+					}
+				}
+			}
+
+			.global-navigation-container {
+				@include width-calc("100% - 20px");
+				margin: 0 10px;
+			}
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-fluid) and (max-width: $breakpoint-max - 1) {
+		.global-navigation .global-navigation-container {
+			margin: 0 $width-adskin;
+			width: auto;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-max) {
+		.global-navigation .global-navigation-container {
+			margin: 0 auto;
+			width: $width-outside-max;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//.global-nav-proto {
+//	background-color: #FFF;
+//	border-bottom: 1px solid #ccc;
+//	height: $nav-height;
+//	position: fixed;
+//	width: 100%;
+//	z-index: 9999999;
+//
+//	> .row > * {
+//		height: $nav-height;
+//	}
+//
+//	.logo {
+//		background: url('../svg/wikia_logo.svg') no-repeat;
+//		display: block;
+//		height: 23px;
+//		float: left;
+//		margin: 10px 20px;
+//		width: 82px;
+//	}
+//
+//	li a {
+//		color: $body-font-color;
+//		height: $nav-height;
+//		line-height: $nav-height;
+//		padding: 0 20px;
+//	}
+//
+//	.nav-search {
+//		display: flex;
+//		align-items: center;
+//
+//		input {
+//			margin-bottom: 0;
+//		}
+//	}
+//
+//	@media #{$small-only}, #{$medium-only} {
+//		$icon-size: 16px;
+//		$nav-menu-padding: ($nav-height - $icon-size) / 2;
+//		.nav-menu {
+//			padding-top: $nav-menu-padding;
+//			padding-bottom: $nav-menu-padding;
+//
+//			&:before {
+//				content: '';
+//				background: url('../icons/icon_nav.svg');
+//				display: block;
+//				height: $icon-size;
+//				width: $icon-size;
+//			}
+//
+//			ul {
+//				@include dropdown-container;
+//				display: none;
+//				margin-top: $nav-menu-padding - 1px;
+//			}
+//			&:hover > ul {
+//				display: block;
+//
+//				li:hover {
+//					background: $color-blue-light;
+//
+//					> a {
+//						color: white;
+//					}
+//
+//					> ul {
+//						@include dropdown-container;
+//						display: block;
+//						margin-left: -100%;
+//						margin-top: ($nav-height + 1px) * -1;
+//
+//						li:hover {
+//							background: $color-blue-light;
+//
+//							> a {
+//								color: white;
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//
+//	@media #{$large-up} {
+//		.nav-menu {
+//			> ul {
+//				display: block;
+//
+//				ul {
+//					display: none;
+//				}
+//
+//				> li {
+//					display: inline-block;
+//
+//					&:hover ul {
+//						@include dropdown-container;
+//						display: block;
+//						margin-top: -1px;
+//
+//						li:hover {
+//							background: $color-blue-light;
+//
+//							> a {
+//								color: white;
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//}

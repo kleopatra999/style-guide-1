@@ -3276,121 +3276,101 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
-.global-nav-proto {
-  background-color: #FFF;
-  border-bottom: 1px solid #ccc;
+/**
+ * Notes/Dependencies:
+ * Design includes setting padding-top of $global-navigation-height on the body/site wrapper
+ */
+.page-nav-proto {
+  padding-top: 46px; }
+
+.global-navigation-proto {
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: #092140;
   height: 46px;
+  margin-top: -47px;
   position: fixed;
+  transition-duration: .5s;
   width: 100%;
-  z-index: 9999999; }
-  .global-nav-proto > .row > * {
-    height: 46px; }
-  .global-nav-proto .logo {
+  z-index: 5000101; }
+  .global-navigation-proto *, .global-navigation-proto *::before, .global-navigation-proto *::after {
+    box-sizing: inherit; }
+  .global-navigation-proto.static {
+    position: absolute; }
+  .global-navigation-proto .global-navigation-container {
+    display: table;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 1064px; }
+    .global-navigation-proto .global-navigation-container:before, .global-navigation-proto .global-navigation-container:after {
+      content: " ";
+      display: table; }
+    .global-navigation-proto .global-navigation-container:after {
+      clear: both; }
+  .global-navigation-proto .table-cell {
+    display: table-cell;
+    vertical-align: middle; }
+  .global-navigation-proto .wikia-logo {
     background: url('../svg/wikia_logo.svg') no-repeat;
     display: block;
     height: 23px;
     float: left;
     margin: 10px 20px;
     width: 82px; }
-  .global-nav-proto li a {
-    color: #39424D;
-    height: 46px;
-    line-height: 46px;
-    padding: 0 20px; }
-  .global-nav-proto .nav-search {
-    display: flex;
-    align-items: center; }
-    .global-nav-proto .nav-search input {
-      margin-bottom: 0; }
-  @media only screen and (max-width: 320px), only screen and (min-width:321px) and (max-width:768px) {
-    .global-nav-proto .nav-menu {
-      padding-top: 15px;
-      padding-bottom: 15px; }
-      .global-nav-proto .nav-menu:before {
-        content: '';
-        background: url('../icons/icon_nav.svg');
-        display: block;
-        height: 16px;
-        width: 16px; }
-      .global-nav-proto .nav-menu ul {
-        position: absolute;
-        display: none;
-        list-style: none;
-        margin-left: 0;
-        outline: none;
-        width: 100%;
-        max-height: none;
-        height: auto;
-        background: #FFFFFF;
-        border: solid 1px #cccccc;
-        font-size: 0.875rem;
-        z-index: 89;
-        max-width: 200px;
-        display: none;
-        margin-top: 14px; }
-        .global-nav-proto .nav-menu ul > *:first-child {
-          margin-top: 0; }
-        .global-nav-proto .nav-menu ul > *:last-child {
-          margin-bottom: 0; }
-      .global-nav-proto .nav-menu:hover > ul {
-        display: block; }
-        .global-nav-proto .nav-menu:hover > ul li:hover {
-          background: #1A5EB8; }
-          .global-nav-proto .nav-menu:hover > ul li:hover > a {
-            color: white; }
-          .global-nav-proto .nav-menu:hover > ul li:hover > ul {
-            position: absolute;
-            display: none;
-            list-style: none;
-            margin-left: 0;
-            outline: none;
-            width: 100%;
-            max-height: none;
-            height: auto;
-            background: #FFFFFF;
-            border: solid 1px #cccccc;
-            font-size: 0.875rem;
-            z-index: 89;
-            max-width: 200px;
-            display: block;
-            margin-left: -100%;
-            margin-top: -47px; }
-            .global-nav-proto .nav-menu:hover > ul li:hover > ul > *:first-child {
-              margin-top: 0; }
-            .global-nav-proto .nav-menu:hover > ul li:hover > ul > *:last-child {
-              margin-bottom: 0; }
-            .global-nav-proto .nav-menu:hover > ul li:hover > ul li:hover {
-              background: #1A5EB8; }
-              .global-nav-proto .nav-menu:hover > ul li:hover > ul li:hover > a {
-                color: white; } }
-  @media only screen and (min-width:769px) {
-    .global-nav-proto .nav-menu > ul {
-      display: block; }
-      .global-nav-proto .nav-menu > ul ul {
-        display: none; }
-      .global-nav-proto .nav-menu > ul > li {
-        display: inline-block; }
-        .global-nav-proto .nav-menu > ul > li:hover ul {
-          position: absolute;
-          display: none;
-          list-style: none;
-          margin-left: 0;
-          outline: none;
-          width: 100%;
-          max-height: none;
-          height: auto;
-          background: #FFFFFF;
-          border: solid 1px #cccccc;
-          font-size: 0.875rem;
-          z-index: 89;
-          max-width: 200px;
-          display: block;
-          margin-top: -1px; }
-          .global-nav-proto .nav-menu > ul > li:hover ul > *:first-child {
-            margin-top: 0; }
-          .global-nav-proto .nav-menu > ul > li:hover ul > *:last-child {
-            margin-bottom: 0; }
-          .global-nav-proto .nav-menu > ul > li:hover ul li:hover {
-            background: #1A5EB8; }
-            .global-nav-proto .nav-menu > ul > li:hover ul li:hover > a {
-              color: white; } }
+  .global-navigation-proto .start-wikia-container {
+    padding-left: 10px; }
+    .global-navigation-proto .start-wikia-container .start-wikia {
+      border: solid 1px #656e78;
+      color: #656e78;
+      display: inline-block;
+      font-size: 12px;
+      height: 30px;
+      line-height: 28px;
+      margin-bottom: 9px;
+      margin-top: 9px;
+      padding: 0 10px; }
+      .global-navigation-proto .start-wikia-container .start-wikia:hover {
+        background-color: #092344;
+        color: #fff;
+        text-decoration: none; }
+      .global-navigation-proto .start-wikia-container .start-wikia span {
+        display: inline-block;
+        padding-top: 1px; }
+
+.WikiaSiteWrapper {
+  padding-top: 47px; }
+
+.ve .global-navigation {
+  position: absolute;
+  z-index: 5000100; }
+
+.sso-login.hidden {
+  display: none; }
+
+@media only screen and (max-width: 767px) {
+  .global-navigation .global-navigation-container {
+    width: 768px;
+    position: relative; } }
+
+@media only screen and (max-width: 320px) {
+  .global-navigation .global-navigation-container {
+    width: 768px; }
+    .global-navigation .global-navigation-container .start-wikia-container {
+      padding-left: 21px; }
+      .global-navigation .global-navigation-container .start-wikia-container .start-wikia {
+        width: 30px;
+        line-height: 28px; }
+        .global-navigation .global-navigation-container .start-wikia-container .start-wikia:after {
+          content: '+';
+          display: block; }
+        .global-navigation .global-navigation-container .start-wikia-container .start-wikia span {
+          display: none; } }
+
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .global-navigation .global-navigation-container {
+    width: 1064px; } }
+
+@media only screen and (min-width:769px) {
+  .global-navigation .global-navigation-container {
+    width: 1238px; } }

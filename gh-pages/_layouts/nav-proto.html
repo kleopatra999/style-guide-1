@@ -3,32 +3,89 @@
 
 {% include head.html %}
 
-<template id="searchTemplate">
-	<input type="search" placeholder="default placeholder">
-</template>
+<!--<template id="searchTemplate">-->
+	<!--<input type="search" placeholder="default placeholder">-->
+<!--</template>-->
 
 <body class="page-{{page.class}}">
-<nav class="global-nav-proto">
-	<div class="row">
-		<a class="logo"></a>
-		<div is="nav-search"
-			 class="nav-search small-5 large-4 columns"
-			 data-placeholder="search"></div>
-		<div is="nav-menu"
-			 class="nav-menu small-2 large-6 columns">
-			<ul>
-				<li>
-					<a href="#">Test</a>
-					<ul>
-						<li><a href="#">Level 2</a></li>
-						<li><a href="#">Level 2</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Test 2</a></li>
-			</ul>
+
+<nav class="global-navigation-proto" id="globalNavigation">
+	<div class="global-navigation-container">
+		<div class="wikia-logo-container table-cell">
+			<a href=""
+			   class="wikia-logo"
+			   rel="nofollow"
+			   data-id="wikia-logo">
+			</a>
+			<!--<a href="<?= htmlspecialchars( $centralUrl ) ?>"-->
+			   <!--class="wikia-logo"-->
+			   <!--rel="nofollow"-->
+			   <!--data-id="wikia-logo">-->
+				<!--<img src="<?= $wg->BlankImgUrl ?>"-->
+					 <!--height="24"-->
+					 <!--width="91"-->
+					 <!--alt="<?= wfMessage( 'oasis-global-page-header' )->escaped() ?>"-->
+					 <!--title="<?= wfMessage( 'oasis-global-page-header' )->escaped() ?>">-->
+			<!--</a>-->
 		</div>
+		<div class="hubs-container table-cell" id="hubsEntryPoint">
+			<!--<?= $app->renderView( 'GlobalNavigation', 'hubsMenu' ) ?>-->
+		</div>
+		<div class="search-container table-cell">
+			<!--<?= $app->renderView( 'GlobalNavigation', 'searchIndex' ); ?>-->
+		</div>
+		<div class="account-navigation-container table-cell">
+			<!--<?= $app->renderView( 'GlobalNavigationAccountNavigation', 'index' ) ?>-->
+		</div>
+		<?php if ( !$isAnon && $notificationsEnabled ): ?>
+		<div class="notifications-container table-cell" id="notificationsEntryPoint">
+			<!--<?= $app->renderView( 'GlobalNavigationWallNotifications', 'Index' ); ?>-->
+		</div>
+		<?php endif; ?>
+		<div class="start-wikia-container table-cell">
+			<a href="<?= htmlspecialchars( $createWikiUrl ) ?>"
+			   class="start-wikia"
+			   title="<?= wfMessage( 'global-navigation-create-wiki' )->escaped(); ?>"
+			   data-id="start-wikia">
+				<span>
+					<!--<?= ( wfMessage( 'global-navigation-create-wiki' )->escaped() ); ?>-->
+				</span>
+			</a>
+		</div>
+		<!--<? if ( $isGameStarLogoEnabled ): ?>-->
+		<!--<a class="gamestar-logo" href="http://gamestar.de/"></a>-->
+		<!--<? endif; ?>-->
 	</div>
 </nav>
+
+
+
+
+
+
+
+
+<!--<nav class="global-nav-proto">-->
+	<!--<div class="row">-->
+		<!--<a class="logo"></a>-->
+		<!--<div is="nav-search"-->
+			 <!--class="nav-search small-5 large-4 columns"-->
+			 <!--data-placeholder="search"></div>-->
+		<!--<div is="nav-menu"-->
+			 <!--class="nav-menu small-2 large-6 columns">-->
+			<!--<ul>-->
+				<!--<li>-->
+					<!--<a href="#">Test</a>-->
+					<!--<ul>-->
+						<!--<li><a href="#">Level 2</a></li>-->
+						<!--<li><a href="#">Level 2</a></li>-->
+					<!--</ul>-->
+				<!--</li>-->
+				<!--<li><a href="#">Test 2</a></li>-->
+			<!--</ul>-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</nav>-->
 <div class="row">
 	<div class="page-content large-12 columns">
 		<a href="https://github.com/Wikia/style-guide"><img style="z-index: 10000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>

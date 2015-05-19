@@ -202,6 +202,22 @@
   clip: auto;
 }
 
+// @mixins
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+// @mixins
+@mixin width-calc($expression) {
+  @include calc(width, #{$expression});
+}
+
+// @mixins
+@mixin height-calc($expression) {
+  @include calc(height, #{$expression});
+}
+
 @include exports("global") {
 
   // Meta styles are included in all builds, as they are a dependancy of the Javascript.
