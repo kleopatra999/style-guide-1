@@ -29,10 +29,32 @@
 			<!--</a>-->
 		</div>
 		<div class="hubs-container table-cell" id="hubsEntryPoint">
+			<a class="hubs-entry-point"></a>
 			<!--<?= $app->renderView( 'GlobalNavigation', 'hubsMenu' ) ?>-->
 		</div>
 		<div class="search-container table-cell">
-			<!--<?= $app->renderView( 'GlobalNavigation', 'searchIndex' ); ?>-->
+			<div class="search-form-wrapper">
+				<form action="<?= $defaultSearchUrl; ?>" class="search-form" id="searchForm" method="get">
+					<div class="global-nav-search-input-wrapper">
+						<div class="search-select-wrapper">
+							<div class="search-select-underlay">
+								<div class="search-icon"></div>
+								<!--<? if (empty($disableLocalSearchOptions)): ?>-->
+								<img class="chevron" src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D"/>
+								<select class="search-select" id="searchSelect">
+									<option value="local" selected="selected" data-placeholder="foo" data-search-url="foo">foo</option>
+									<option value="global" data-placeholder="foo" data-search-url="foo">bar</option>
+								</select>
+								<!--<? endif ?>-->
+							</div>
+						</div>
+						<input id="searchInput" accesskey="f" autocomplete="off" class="search-input" name="search" placeholder="foobar" type="text" value="foo"/>
+						<input type="submit" id="searchSubmit" class="search-button" value="" />
+						<input name="fulltext" type="hidden" value="foo"/>
+						<input disabled id="searchInputResultLang" type="hidden" name="resultsLang" value="foo"/>
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="account-navigation-container table-cell">
 			<!--<?= $app->renderView( 'GlobalNavigationAccountNavigation', 'index' ) ?>-->

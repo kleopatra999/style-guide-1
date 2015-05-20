@@ -38,7 +38,6 @@ $content-width-large: 1238px;
 $breakpoint-content: $width-outside;
 $width-outside-min: 768px;
 
-
 $breakpoint-not-supported: "#{$screen} and (max-width: #{$breakpoint-width-not-supported})";
 $breakpoint-small-up: $screen;
 $breakpoint-small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
@@ -57,3 +56,21 @@ $width-adskins: $width-adskin * 2;
 $breakpoint-max: $width-outside-max + $width-adskins;
 $breakpoint-fluid: $width-outside + $width-adskins;
 
+// vertical colors (hubs)
+$color-vertical-books: #ff7f26;
+$color-vertical-comics: #ff5400;
+$color-vertical-anime: #ff5400;
+$color-vertical-games: #94d11f;
+$color-vertical-lifestyle: #ffd000;
+$color-vertical-movies: #09d3bf;
+$color-vertical-music: #c819ad;
+$color-vertical-tv: #00b7e0;
+
+$color-vertical-books-secondary: #e76400;
+$color-vertical-comics-secondary: #e1390b;
+$color-vertical-anime-secondary: #e1390b;
+$color-vertical-games-secondary: #76bf06;
+$color-vertical-lifestyle-secondary: #ffad00;
+$color-vertical-movies-secondary: #09b3a6;
+$color-vertical-music-secondary: #981093;
+$color-vertical-tv-secondary: #008cce;

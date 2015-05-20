@@ -218,6 +218,106 @@
   @include calc(height, #{$expression});
 }
 
+// @mixins
+// makes a chevron
+@mixin left-chevron($height: 10px, $thickness: 2px, $direction: 'left', $color: #000) {
+  &::before {
+    border-color: $color;
+    border-style: solid;
+    border-width: $thickness $thickness 0 0;
+    content: '';
+    display: inline-block;
+    height: round($height / 2);
+    left: 0;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    width: round($height / 2);
+
+    @if ($direction == 'down') {
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    } @else if ($direction == 'left') {
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    } @else if ($direction == 'right') {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    } @else if ($direction == 'up') {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+@mixin right-chevron($height: 10px, $thickness: 2px, $direction: 'right', $color: #000) {
+  &::after {
+    border-color: $color;
+    border-style: solid;
+    border-width: $thickness $thickness 0 0;
+    content: '';
+    display: inline-block;
+    height: round($height / 2);
+    right: 0;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    width: round($height / 2);
+
+    @if ($direction == 'down') {
+      -webkit-transform: rotate(135deg);
+      transform: rotate(135deg);
+    } @else if ($direction == 'left') {
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    } @else if ($direction == 'right') {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    } @else if ($direction == 'up') {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// @mixins
+@mixin column-count( $count ) {
+  -webkit-column-count: $count;
+  -moz-column-count: $count;
+  column-count: $count;
+}
+
+@mixin column-rule( $rule ) {
+  -webkit-column-rule: $rule;
+  -moz-column-rule: $rule;
+  column-rule: $rule;
+}
+
+@mixin column-gap( $gap ) {
+  -webkit-column-gap: $gap;
+  -moz-column-gap: $gap;
+  column-gap: $gap;
+}
+
+@mixin column-break-inside( $value ) {
+  -webkit-column-break-inside: $value;
+  -moz-column-break-inside: $value;
+  -o-column-break-inside: $value;
+  -ms-column-break-inside: $value;
+  column-break-inside: $value;
+}
+
+@mixin column-span( $value ) {
+  -webkit-column-span: $value;
+  column-span: $value;
+}
+
+@mixin global-nav-chevron {
+  border: 4px solid transparent;
+  border-top-color: $global-navigation-text-color;
+  content: ' ';
+  display: inline-block;
+}
+
 @include exports("global") {
 
   // Meta styles are included in all builds, as they are a dependancy of the Javascript.
