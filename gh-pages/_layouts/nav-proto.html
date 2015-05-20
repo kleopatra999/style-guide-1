@@ -48,7 +48,7 @@
 								<!--<? endif ?>-->
 							</div>
 						</div>
-						<input id="searchInput" accesskey="f" autocomplete="off" class="search-input" name="search" placeholder="foobar" type="text" value="foo"/>
+						<input id="searchInput" accesskey="f" autocomplete="off" class="search-input" name="search" placeholder="Search within LizLux Wiki..." type="text" value=""/>
 						<input type="submit" id="searchSubmit" class="search-button" value="" />
 						<input name="fulltext" type="hidden" value="foo"/>
 						<input disabled id="searchInputResultLang" type="hidden" name="resultsLang" value="foo"/>
@@ -57,7 +57,72 @@
 			</div>
 		</div>
 		<div class="account-navigation-container table-cell">
-			<!--<?= $app->renderView( 'GlobalNavigationAccountNavigation', 'index' ) ?>-->
+			<ul id="AccountNavigation" class="AccountNavigation table-cell">
+				<li class="account-navigation-first-item">
+					<div class="links-container anon">
+						<span class="avatar-container anon-avatar-placeholder"></span>
+						<span class="sign-in-label"></span>
+						<div class="avatar-container anon-avatar-placeholder">
+							<!--<?= $profileAvatar ?>-->
+						</div>
+						<?php if ($isAnon) : ?>
+						<span class="sign-in-label">Sign in</span>
+						<? endif; ?>
+						<img class="chevron" src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D"/>
+					</div>
+					<!--<?php if ( !$isAnon ): ?>-->
+					<!--<ul class="user-menu subnav global-nav-dropdown">-->
+						<!--<?php foreach( $userDropdown as $link ): ?>-->
+						<!--<li><?= $link ?></li>-->
+						<!--<?php endforeach; ?>-->
+					<!--</ul>-->
+					<!--<?php else:-->
+
+					<div id="UserLoginDropdown" class="UserLoginDropdown global-nav-dropdown">
+						<div class="ajaxRegisterContainer"><a data-id="register" href="/wiki/Special:UserSignup" rel="nofollow" class="ajaxRegister">Sign up</a></div>
+						<form action="/wiki/Special:UserLogin" method="post" class="WikiaForm">
+							<fieldset><div class="input-group general-success success" style="display: none;"><div class="success-msg"></div></div>
+								<div class="input-group error general-errors">
+									<div class="error-msg"></div>
+								</div>
+								<input type="hidden" name="loginToken" value="c0bfe2ebcd7e04a510cb1de8a2b7d31a">
+								<input type="hidden" name="returnto" value="LizLux_Wiki">
+								<input type="hidden" name="returntoquery" value="">
+								<div class="input-group hide-label required">
+									<label>Username</label>
+									<input type="text" class="hide-label" id="usernameInput" name="username" tabindex="1" placeholder="Username">
+								</div>
+								<div class="input-group hide-label required">
+									<label>Password</label>
+									<input type="password" class="hide-label" id="passwordInput" name="password" tabindex="2" placeholder="Password">
+								</div>
+								<div class="input-group">
+									<a href="#" class="forgot-password" tabindex="0">
+										Forgot your password?</a>
+								</div>
+								<div class="input-group keep-logged-in">
+									<label>
+										<input type="checkbox" class="keep-logged-in" name="keeploggedin" value="1" tabindex="3">
+										Stay logged in
+									</label>
+								</div>
+								<div class="input-group login-button">
+									<input type="submit" class="login-button" value="Log in" tabindex="4">
+								</div>
+							</fieldset>
+						</form>
+						<div class="sso-login">
+							<div class="sso-login-divider">
+								<span>Or</span>
+							</div>
+							<a href="#" class="wikia-button wikia-button-facebook sso-login-facebook" data-id="facebook" tabindex="5"><img alt="" class="sprite facebook" height="14" src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D" width="15"> Connect</a>
+						</div>
+					</div>
+
+
+					<!--endif; ?>-->
+				</li>
+			</ul>
 		</div>
 		<?php if ( !$isAnon && $notificationsEnabled ): ?>
 		<div class="notifications-container table-cell" id="notificationsEntryPoint">
@@ -70,7 +135,7 @@
 			   title="<?= wfMessage( 'global-navigation-create-wiki' )->escaped(); ?>"
 			   data-id="start-wikia">
 				<span>
-					<!--<?= ( wfMessage( 'global-navigation-create-wiki' )->escaped() ); ?>-->
+					Start a Wikia
 				</span>
 			</a>
 		</div>

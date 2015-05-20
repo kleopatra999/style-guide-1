@@ -3773,3 +3773,248 @@ th.hide-for-touch {
 @media only screen and (min-width:769px) {
   .global-navigation .global-navigation-container {
     width: 1238px; } }
+
+.account-navigation-container {
+  position: relative; }
+
+.AccountNavigation {
+  cursor: pointer;
+  height: 46px;
+  margin: 0;
+  padding: 0 21px; }
+  .AccountNavigation.active {
+    background-color: #e6ebf2; }
+    .AccountNavigation.active .user-menu {
+      display: table;
+      table-layout: fixed; }
+  .AccountNavigation .avatar {
+    border: 0; }
+  .AccountNavigation .account-navigation-first-item {
+    list-style: none; }
+    .AccountNavigation .account-navigation-first-item .links-container {
+      display: table-row;
+      height: 30px; }
+      .AccountNavigation .account-navigation-first-item .links-container .chevron {
+        border: 4px solid transparent;
+        border-top-color: #656e78;
+        content: ' ';
+        display: inline-block;
+        left: 50px;
+        margin-left: 3px;
+        margin-top: 13px;
+        position: absolute; }
+      .AccountNavigation .account-navigation-first-item .links-container.anon .chevron {
+        left: 45px;
+        margin-left: 3px;
+        position: static; }
+    .AccountNavigation .account-navigation-first-item .avatar-container {
+      overflow: hidden; }
+      .AccountNavigation .account-navigation-first-item .avatar-container.anon-avatar-placeholder, .AccountNavigation .account-navigation-first-item .avatar-container.logged-avatar-placeholder {
+        background-image: url('../svg/signin_icon.svg');
+        /* inline */
+        background-position: center;
+        background-repeat: no-repeat; }
+      .AccountNavigation .account-navigation-first-item .avatar-container.anon-avatar-placeholder {
+        height: 16px;
+        width: 18px; }
+      .AccountNavigation .account-navigation-first-item .avatar-container.logged-avatar, .AccountNavigation .account-navigation-first-item .avatar-container.logged-avatar-placeholder {
+        border: #c7d1d8 1px solid;
+        border-radius: 50%;
+        height: 30px;
+        margin: 0;
+        width: 30px; }
+  .AccountNavigation .sign-in-label {
+    color: #656e78;
+    display: table-cell;
+    font-size: 12px;
+    padding-top: 2px;
+    vertical-align: middle; }
+    .AccountNavigation .sign-in-label:hover {
+      text-decoration: none; }
+  .AccountNavigation .user-menu {
+    border: 1px solid #c8d2d7;
+    display: none;
+    font-size: 14px;
+    min-width: 150px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 96%;
+    white-space: normal; }
+    .AccountNavigation .user-menu > li {
+      display: table-row;
+      height: 40px;
+      list-style: none; }
+      .AccountNavigation .user-menu > li > a {
+        background-color: #fff;
+        border-top: 1px solid #c8d2d7;
+        color: #0a5fa3;
+        display: table-cell;
+        padding: 8px 20px;
+        text-decoration: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 100%; }
+        .AccountNavigation .user-menu > li > a:hover {
+          background-color: #0a5fa3;
+          color: #fff; }
+      .AccountNavigation .user-menu > li:first-child a {
+        border-top: 0; }
+
+.AccountNavigation.active .UserLoginDropdown {
+  display: block; }
+
+.UserLoginDropdown {
+  background-color: #fff;
+  border: 1px solid #c8d2d7;
+  color: #666;
+  display: none;
+  font-size: 12px;
+  list-style: none;
+  padding: 0 0 19px 0;
+  position: absolute;
+  right: 0;
+  top: 96%;
+  width: 200px;
+  white-space: normal;
+  z-index: 5000100; }
+  .UserLoginDropdown .ajaxRegisterContainer {
+    background-color: #092140;
+    display: table;
+    margin-bottom: 10px;
+    padding: 19px;
+    width: 100%; }
+    .UserLoginDropdown .ajaxRegisterContainer .ajaxRegister {
+      background-color: #0a5fa3;
+      color: #fff;
+      display: table-cell;
+      font-weight: bold;
+      height: 40px;
+      line-height: 16px;
+      padding: 4px;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle; }
+      .UserLoginDropdown .ajaxRegisterContainer .ajaxRegister:hover, .UserLoginDropdown .ajaxRegisterContainer .ajaxRegister:active {
+        background-color: #0c76cc;
+        text-decoration: none; }
+  .UserLoginDropdown .hide-label label {
+    display: none; }
+  .UserLoginDropdown .WikiaForm {
+    padding: 0 19px; }
+    .UserLoginDropdown .WikiaForm .forgot-password {
+      color: #0a5fa3;
+      font-size: 12px;
+      margin: 5px 0 20px 5px; }
+    .UserLoginDropdown .WikiaForm .input-group {
+      box-sizing: border-box;
+      line-height: inherit;
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+      .UserLoginDropdown .WikiaForm .input-group.login-button {
+        margin-top: 10px;
+        padding: 0; }
+      .UserLoginDropdown .WikiaForm .input-group.keep-logged-in {
+        margin-left: 5px; }
+    .UserLoginDropdown .WikiaForm .keep-logged-in {
+      padding-bottom: 15px;
+      padding-top: 15px;
+      vertical-align: middle; }
+    .UserLoginDropdown .WikiaForm input[type=text], .UserLoginDropdown .WikiaForm input[type=password], .UserLoginDropdown .WikiaForm input[type=submit] {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0; }
+    .UserLoginDropdown .WikiaForm input[type=text], .UserLoginDropdown .WikiaForm input[type=password] {
+      border: none;
+      box-shadow: none;
+      box-sizing: border-box;
+      color: #092140;
+      font-size: 15px;
+      height: 25px;
+      margin: 5px 0;
+      width: 100%; }
+      .UserLoginDropdown .WikiaForm input[type=text]::-webkit-input-placeholder, .UserLoginDropdown .WikiaForm input[type=password]::-webkit-input-placeholder {
+        color: #64696c;
+        font-style: italic; }
+      .UserLoginDropdown .WikiaForm input[type=text]::-moz-placeholder, .UserLoginDropdown .WikiaForm input[type=password]::-moz-placeholder {
+        color: #64696c;
+        font-style: italic; }
+      .UserLoginDropdown .WikiaForm input[type=text]:-ms-input-placeholder, .UserLoginDropdown .WikiaForm input[type=password]:-ms-input-placeholder {
+        color: #64696c;
+        font-style: italic; }
+      .UserLoginDropdown .WikiaForm input[type=text], .UserLoginDropdown .WikiaForm input[type=text]:focus, .UserLoginDropdown .WikiaForm input[type=text]:active, .UserLoginDropdown .WikiaForm input[type=password], .UserLoginDropdown .WikiaForm input[type=password]:focus, .UserLoginDropdown .WikiaForm input[type=password]:active {
+        background-color: #eef1f3;
+        outline: none;
+        padding: 0 5px; }
+    .UserLoginDropdown .WikiaForm input[type=text] {
+      margin-top: 0px; }
+    .UserLoginDropdown .WikiaForm input[type=checkbox] {
+      margin: 0; }
+    .UserLoginDropdown .WikiaForm input[type=submit] {
+      background-image: none;
+      background-color: #092140;
+      border: 0;
+      border-radius: 0;
+      color: #fff;
+      font-weight: bold;
+      line-height: 16px;
+      min-height: 40px;
+      padding: 4px;
+      text-transform: uppercase;
+      white-space: normal;
+      width: 100%;
+      word-break: break-word; }
+      .UserLoginDropdown .WikiaForm input[type=submit]:hover, .UserLoginDropdown .WikiaForm input[type=submit]:active {
+        background-color: #0a5fa3; }
+    .UserLoginDropdown .WikiaForm fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+    .UserLoginDropdown .WikiaForm label {
+      color: #666;
+      margin: 0; }
+  .UserLoginDropdown .sso-login {
+    padding: 0 19px; }
+    .UserLoginDropdown .sso-login .sso-login-divider {
+      border-top: solid 1px #c8d2d7;
+      height: 0;
+      margin: 20px 0;
+      text-align: center; }
+      .UserLoginDropdown .sso-login .sso-login-divider span {
+        background-color: #fff;
+        color: #c8d2d7;
+        display: inline-block;
+        font-weight: bold;
+        padding: 0 5px;
+        position: relative;
+        text-transform: uppercase;
+        top: -8px; }
+    .UserLoginDropdown .sso-login .wikia-button-facebook {
+      border: 0;
+      border-radius: 0;
+      color: #fff;
+      display: block;
+      font-weight: bold;
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase; }
+      .UserLoginDropdown .sso-login .wikia-button-facebook, .UserLoginDropdown .sso-login .wikia-button-facebook:hover, .UserLoginDropdown .sso-login .wikia-button-facebook:active {
+        background-image: none;
+        background-color: #3c5b9b;
+        text-decoration: none; }
+      .UserLoginDropdown .sso-login .wikia-button-facebook:hover, .UserLoginDropdown .sso-login .wikia-button-facebook:active {
+        background-color: #446597; }
+    .UserLoginDropdown .sso-login .sprite.facebook {
+      background-image: url('/extensions/wikia/UserLogin/images/facebook_icon.png');
+      /* inline */
+      background-position: 15px bottom;
+      background-repeat: no-repeat;
+      border-right: 1px solid #6381b4;
+      float: left;
+      height: 40px;
+      margin: 0;
+      width: 41px; }
