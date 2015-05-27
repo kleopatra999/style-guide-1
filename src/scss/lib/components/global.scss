@@ -385,6 +385,25 @@
   background-image: radial-gradient(ellipse at center, $color1 0%,$color2 100%); /* W3C */
 }
 
+$default-blackout-background-color: rgba(0, 0, 0, 0.5);
+@mixin blackout( $blackout-background-color: $default-blackout-background-color ) {
+  background: $blackout-background-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  &.visible {
+    z-index: 5000100; // TODO: set up z-inde system. This was $zTop in oasis
+  }
+}
+
+.transparent-out {
+  @include blackout( rgba( 1, 1, 1, 0.0 ) );
+}
+
 @include exports("global") {
 
   // Meta styles are included in all builds, as they are a dependancy of the Javascript.

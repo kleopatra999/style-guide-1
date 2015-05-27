@@ -1,3 +1,14 @@
+.transparent-out {
+  background: rgba(1, 1, 1, 0);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1; }
+  .transparent-out.visible {
+    z-index: 5000100; }
+
 meta.foundation-version {
   font-family: "/5.4.7/"; }
 
