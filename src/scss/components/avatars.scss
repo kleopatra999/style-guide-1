@@ -1,0 +1,25 @@
+@import "../functions";
+
+/*
+markup:
+
+<figure class="avatar">
+  <image src=".../user_photo.jpg" alt="Jane Doe">
+</figure>
+*/
+// variables
+$avatar-size: 36px;
+
+// component
+
+/*figure*/
+.avatar {
+	border: 2px solid $color-white;
+	border-radius: 50%;
+	height: $avatar-size;
+	width: $avatar-size;
+
+	> img {
+		width: 100%;
+	}
+}

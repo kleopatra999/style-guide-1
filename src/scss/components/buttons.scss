@@ -1,0 +1,87 @@
+@import "../functions";
+
+// variables
+
+$button-height-small: rem-calc(30);
+$button-height-medium: rem-calc(40);
+$button-height-large: rem-calc(50);
+
+$button-bg-color: $color-blue-light;
+$button-bg-hover: $color-blue-dark;
+$button-border-color: $button-bg-color;
+$secondary-button-bg-hover: $color-white;
+$secondary-button-border-color: $button-bg-color;
+
+// mixins
+@mixin button-size($size) {
+	height: $size;
+	line-height: $size;
+}
+
+// component
+.button {
+	@include single-transition(background-color);
+	@include button-size($button-height-medium);
+
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	background-color: $button-bg-color;
+	border-color: $button-bg-color;
+	border-style: solid;
+	border-width: 1px;
+	color: $button-font-color;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family-sans-serif;
+	font-size: $base-font-size;
+	font-weight: normal;
+	line-height: normal;
+	margin: rem-calc(0 0 20);
+	padding: rem-calc(0 0 25);
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		background-color: $button-bg-hover;
+		border-color: $button-bg-hover;
+	}
+}
+
+// secondary
+.button__secondary {
+	background-color: transparent;
+	color: $button-bg-color;
+}
+
+.button__disabled {
+	color: $color-gray-light;
+	cursor: default;
+	opacity: .5;
+	box-shadow: none;
+
+	&.button_secondary {
+		border-color: $button-bg-hover;
+		color: $button-bg-hover;
+	}
+}
+
+// sizes
+
+.button__small {
+	@include button-size($button-height-small);
+}
+
+.button__large {
+	@include button-size($button-height-large);
+}
+
+// icon buttons
+
+//firefox 2px fix
+.button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}

@@ -1,0 +1,234 @@
+/*
+markup:
+
+<figure class="image__landscape image__xlarge">
+  <image src=".../images/landscape_example.jpg" alt="Landscape image">
+</figure>
+
+*/
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__thumb {
+    width: 52px; }
+    .image__landscape.image__thumb > img {
+      height: 29.25px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__thumb {
+    width: 100px; }
+    .image__landscape.image__thumb > img {
+      height: 56.25px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__thumb {
+    width: 120px; }
+    .image__landscape.image__thumb > img {
+      height: 67.5px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__thumb {
+    width: 160px; }
+    .image__landscape.image__thumb > img {
+      height: 90px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__thumb {
+    width: 180px; }
+    .image__landscape.image__thumb > img {
+      height: 101.25px; } }
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__xsmall {
+    width: 78px; }
+    .image__landscape.image__xsmall > img {
+      height: 43.875px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__xsmall {
+    width: 150px; }
+    .image__landscape.image__xsmall > img {
+      height: 84.375px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__xsmall {
+    width: 180px; }
+    .image__landscape.image__xsmall > img {
+      height: 101.25px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__xsmall {
+    width: 240px; }
+    .image__landscape.image__xsmall > img {
+      height: 135px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__xsmall {
+    width: 270px; }
+    .image__landscape.image__xsmall > img {
+      height: 151.875px; } }
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__small {
+    width: 104px; }
+    .image__landscape.image__small > img {
+      height: 58.5px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__small {
+    width: 200px; }
+    .image__landscape.image__small > img {
+      height: 112.5px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__small {
+    width: 240px; }
+    .image__landscape.image__small > img {
+      height: 135px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__small {
+    width: 320px; }
+    .image__landscape.image__small > img {
+      height: 180px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__small {
+    width: 360px; }
+    .image__landscape.image__small > img {
+      height: 202.5px; } }
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__medium {
+    width: 156px; }
+    .image__landscape.image__medium > img {
+      height: 87.75px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__medium {
+    width: 300px; }
+    .image__landscape.image__medium > img {
+      height: 168.75px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__medium {
+    width: 360px; }
+    .image__landscape.image__medium > img {
+      height: 202.5px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__medium {
+    width: 480px; }
+    .image__landscape.image__medium > img {
+      height: 270px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__medium {
+    width: 540px; }
+    .image__landscape.image__medium > img {
+      height: 303.75px; } }
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__large {
+    width: 208px; }
+    .image__landscape.image__large > img {
+      height: 117px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__large {
+    width: 400px; }
+    .image__landscape.image__large > img {
+      height: 225px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__large {
+    width: 480px; }
+    .image__landscape.image__large > img {
+      height: 270px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__large {
+    width: 640px; }
+    .image__landscape.image__large > img {
+      height: 360px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__large {
+    width: 720px; }
+    .image__landscape.image__large > img {
+      height: 405px; } }
+@media only screen and (max-width: 320px) {
+  .image__landscape.image__xlarge {
+    width: 312px; }
+    .image__landscape.image__xlarge > img {
+      height: 175.5px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__landscape.image__xlarge {
+    width: 600px; }
+    .image__landscape.image__xlarge > img {
+      height: 337.5px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__landscape.image__xlarge {
+    width: 720px; }
+    .image__landscape.image__xlarge > img {
+      height: 405px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__landscape.image__xlarge {
+    width: 960px; }
+    .image__landscape.image__xlarge > img {
+      height: 540px; } }
+@media only screen and (min-width:1157px) {
+  .image__landscape.image__xlarge {
+    width: 1080px; }
+    .image__landscape.image__xlarge > img {
+      height: 607.5px; } }
+
+@media only screen and (max-width: 320px) {
+  .image__portrait.image__thumb {
+    width: 52px; }
+    .image__portrait.image__thumb > img {
+      height: 72.8px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__portrait.image__thumb {
+    width: 100px; }
+    .image__portrait.image__thumb > img {
+      height: 140px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__portrait.image__thumb {
+    width: 120px; }
+    .image__portrait.image__thumb > img {
+      height: 168px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__portrait.image__thumb {
+    width: 160px; }
+    .image__portrait.image__thumb > img {
+      height: 224px; } }
+@media only screen and (min-width:1157px) {
+  .image__portrait.image__thumb {
+    width: 180px; }
+    .image__portrait.image__thumb > img {
+      height: 252px; } }
+@media only screen and (max-width: 320px) {
+  .image__portrait.image__xsmall {
+    width: 78px; }
+    .image__portrait.image__xsmall > img {
+      height: 109.2px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__portrait.image__xsmall {
+    width: 150px; }
+    .image__portrait.image__xsmall > img {
+      height: 210px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__portrait.image__xsmall {
+    width: 180px; }
+    .image__portrait.image__xsmall > img {
+      height: 252px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__portrait.image__xsmall {
+    width: 240px; }
+    .image__portrait.image__xsmall > img {
+      height: 336px; } }
+@media only screen and (min-width:1157px) {
+  .image__portrait.image__xsmall {
+    width: 270px; }
+    .image__portrait.image__xsmall > img {
+      height: 378px; } }
+@media only screen and (max-width: 320px) {
+  .image__portrait.image__small {
+    width: 104px; }
+    .image__portrait.image__small > img {
+      height: 145.6px; } }
+@media only screen and (min-width:321px) and (max-width:768px) {
+  .image__portrait.image__small {
+    width: 200px; }
+    .image__portrait.image__small > img {
+      height: 280px; } }
+@media only screen and (min-width:769px) and (max-width:1024px) {
+  .image__portrait.image__small {
+    width: 240px; }
+    .image__portrait.image__small > img {
+      height: 336px; } }
+@media only screen and (min-width:1025px) and (max-width:1156px) {
+  .image__portrait.image__small {
+    width: 320px; }
+    .image__portrait.image__small > img {
+      height: 448px; } }
+@media only screen and (min-width:1157px) {
+  .image__portrait.image__small {
+    width: 360px; }
+    .image__portrait.image__small > img {
+      height: 504px; } }

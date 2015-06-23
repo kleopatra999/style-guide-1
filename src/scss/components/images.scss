@@ -1,0 +1,104 @@
+@import "../variables";
+
+/*
+markup:
+
+<figure class="image__landscape image__xlarge">
+  <image src=".../images/landscape_example.jpg" alt="Landscape image">
+</figure>
+
+*/
+
+// mixins
+@mixin image-size($image-width, $height-ratio) {
+	width: $image-width;
+
+	> img {
+		height: $image-width * $height-ratio;
+	}
+}
+
+@mixin landscape-image-dimensions($image-size) {
+	@media #{$small-only} {
+		@include image-size(nth($landscape-image-columns, $image-size)  * $landscape-column-width-small, $landscape-height-ratio);
+	}
+
+	@media #{$medium-only} {
+		@include image-size(nth($landscape-image-columns, $image-size)  * $landscape-column-width-medium, $landscape-height-ratio);
+	}
+
+	@media #{$large-only} {
+		@include image-size(nth($landscape-image-columns, $image-size)  * $landscape-column-width-large, $landscape-height-ratio);
+	}
+
+	@media #{$xlarge-only} {
+		@include image-size(nth($landscape-image-columns, $image-size)  * $landscape-column-width-xlarge, $landscape-height-ratio);
+	}
+
+	@media #{$xxlarge-up} {
+		@include image-size(nth($landscape-image-columns, $image-size)  * $landscape-column-width-xxlarge, $landscape-height-ratio);
+	}
+}
+
+@mixin portrait-image-dimensions($image-size) {
+	@media #{$small-only} {
+		@include image-size(nth($portrait-image-columns, $image-size)  * $portrait-column-width-small, $portrait-height-ratio);
+	}
+
+	@media #{$medium-only} {
+		@include image-size(nth($portrait-image-columns, $image-size)  * $portrait-column-width-medium, $portrait-height-ratio);
+	}
+
+	@media #{$large-only} {
+		@include image-size(nth($portrait-image-columns, $image-size)  * $portrait-column-width-large, $portrait-height-ratio);
+	}
+
+	@media #{$xlarge-only} {
+		@include image-size(nth($portrait-image-columns, $image-size)  * $portrait-column-width-xlarge, $portrait-height-ratio);
+	}
+
+	@media #{$xxlarge-up} {
+		@include image-size(nth($portrait-image-columns, $image-size)  * $portrait-column-width-xxlarge, $portrait-height-ratio);
+	}
+}
+
+// component
+.image__landscape {
+	&.image__thumb {
+		@include landscape-image-dimensions($image-size-thumb);
+	}
+
+	&.image__xsmall {
+		@include landscape-image-dimensions($image-size-xsmall);
+	}
+
+	&.image__small {
+		@include landscape-image-dimensions($image-size-small);
+	}
+
+	&.image__medium {
+		@include landscape-image-dimensions($image-size-medium);
+	}
+
+	&.image__large {
+		@include landscape-image-dimensions($image-size-large);
+	}
+
+	&.image__xlarge {
+		@include landscape-image-dimensions($image-size-xlarge);
+	}
+}
+
+.image__portrait {
+	&.image__thumb {
+		@include portrait-image-dimensions($image-size-thumb);
+	}
+
+	&.image__xsmall {
+		@include portrait-image-dimensions($image-size-xsmall);
+	}
+
+	&.image__small {
+		@include portrait-image-dimensions($image-size-small);
+	}
+}
